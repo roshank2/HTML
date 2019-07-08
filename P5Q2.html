@@ -1,0 +1,47 @@
+<html>
+
+<head><title>Ques 2</title></head>
+
+<body>
+
+<form name = "myform" onsubmit = "return submitForm()">
+&nbsp <b>Username &nbsp</b>
+<input type = "text" name = "usern" value = ""><br/><br/>
+&nbsp <b>Password &nbsp</b>
+<input type = "password" name = "pass" minlength = "8" maxlength = "12" value = ""><br/><br/>
+&nbsp &nbsp<input type = "submit" value = "Sign-in">
+</form>
+
+</body>
+
+<script language = "javascript">
+function submitForm(){
+	var alphaExp = /^[a-zA-Z]+$/;
+	var noError = true;
+	var uname = "roshank";
+	var pas = "12345678";
+	if(myform.usern.value == ""){
+		alert("Please enter username");
+		noError = false;
+	}else if(!myform.usern.value.match(alphaExp)){
+		alert("Invalid username");
+		noError = false;	
+	}else if(myform.pass.value == ""){
+		alert("Please enter password");
+		noError = false;
+	}else{
+		if(uname != myform.usern.value || pas != myform.pass.value){
+			alert("Wrong username or password... Try Again!");
+			noError = false;
+		}
+	}
+	if(noError){
+		document.write("Signed in successfully");
+		return true;
+	}else{
+		return false;
+	}
+}
+</script>
+
+</html>

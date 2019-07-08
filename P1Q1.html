@@ -1,0 +1,27 @@
+<html>
+<script language = "javascript">
+var st = prompt("Enter string: ");
+var subst = prompt("Enter substring to search: ");
+var i = st.indexOf(subst);
+/*var i = -1;
+var M = subst.length;
+var N = st.length;
+for(var j=0;j<=N-M;j++){
+	for(var k =0;k<M;k++){
+		if(st.charAt(j+k)!=subst.charAt(k)){
+			break;
+		}	
+	}
+	if(k==M){
+		i=j;
+		break;
+	}
+}*/
+document.write("String: " + st + "<br>Substring to search: " + subst);
+if(i!=-1){
+	document.write("<br> Position of substring: " + (i+1));
+}else{
+	document.write("<br> Substring not found");
+}
+</script>
+</html>

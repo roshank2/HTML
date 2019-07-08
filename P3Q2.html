@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Registration form</title>
+</head>
+<body>
+<h1 align = "center">Registration form</h1>
+<form name = "myform" onsubmit = "submitForm()">
+&nbsp <b>First name &nbsp</b>
+<input type = "text" name = "fn" value = "">
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+<b>Last name &nbsp</b>
+<input type = "text" name = "ln" value = ""><br/><br/>
+&nbsp <b>University &nbsp</b>
+<select name = "dd1">
+<option value = "">Select</option>
+<option value = "INGOU">IGNOU</option>
+<option value = "IIT">IIT</option>
+<option value = "DU">DU</option>
+<option value = "DTU">DTU</option>
+<option value = "NSUT">NSUT</option>
+</select><br/><br/>
+&nbsp <b>Academic year &nbsp</b>
+<select name = "dd2">
+<option value = "">Select</option>
+<option value = "2019">2019</option>
+<option value = "2020">2020</option>
+<option value = "2021">2021</option>
+</select><br/><br/>
+&nbsp <b>Address &nbsp</b>
+<input type = "text" size = "81" name = "address" value = ""><br/></br>
+&nbsp &nbsp &nbsp &nbsp &nbsp
+<b>Where would you like to work </b><br/><br/>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp	
+<input type = "radio" name = "answer" value = "academic" checked> Academic</input><br/>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp
+
+<input type = "radio" name = "answer" value = "industry"> Industry</input> <br/><br/>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp
+<input type = "submit">
+
+</form>
+</body>
+
+<script language = "javascript">
+function submitForm(){
+	var alphaExp = /^[a-zA-Z]+$/;
+	var alphaNum = /^[ 0-9a-zA-Z]+$/;
+	var noError = true;
+	if(myform.fn.value == ""){
+		alert("First name cannot be left blank");
+		noError = false;
+	}else{
+		if(!myform.fn.value.match(alphaExp)){
+		alert("Invalid first name");
+			noError = false;
+		}
+	}
+	if(myform.ln.value == ""){
+		alert("Last name cannot be left blank");
+			noError = false;
+	}else{
+		if(!myform.ln.value.match(alphaExp)){
+		alert("Invalid last name");
+			noError = false;
+		}
+	}
+	if(myform.dd1.value == ""){
+		alert("Please select your university");
+			noError = false;
+	}
+	if(myform.dd2.value == ""){
+		alert("Please select academic year");
+			noError = false;
+	}
+	if(myform.address.value == ""){
+		alert("Address cannot be left blank");
+			noError = false;
+	}else{	
+		if(!myform.address.value.match(alphaNum)){
+			alert("Invalid address");
+			noError = false;
+		}
+	}
+	if(noError){
+		document.write("Form Submitted successfully");
+	}
+}
+</script>
+
+</html>

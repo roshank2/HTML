@@ -1,0 +1,14 @@
+<html>
+	<head>
+	<script>
+		function m(e){
+			var bx = document.getElementById("text");
+			bx.style.left = e.pageX;
+			bx.style.top = e.pageY;
+		}
+	</script>
+	</head>
+	<body onmousemove="m(event)">
+		<div id = "text" style = "position:absolute">Roshan</div>
+	</body>
+</html>

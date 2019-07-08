@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>ABC newspaper</title>
+</head>
+<body>
+<h1>ABC NEWSPAPER</h1>
+<form name = "myform" onsubmit = "return submitForm()">
+&nbsp <b>First Name: &nbsp</b>
+<input type = "text" value = "" name = "fn"><br/><br/>
+
+&nbsp <b>Last Name: &nbsp</b>
+<input type = "text" value = "" name = "ln"><br/><br/>
+
+&nbsp <b>Contact Number: &nbsp</b>
+<input type = "text" value = "" name = "cn" minlength = "10" maxlength = "10" size = "10">
+<br/><br/>
+
+&nbsp <b>Email id: &nbsp</b>
+<input type = "text" value = "" name = "eid"><br/><br/>
+
+&nbsp <b>Interests &nbsp</b>
+
+<input type = "checkbox" value = "cricket" name = "interests[]">Cricket</input>&nbsp
+<input type = "checkbox" value = "politics" name = "interests[]">Politics</input>&nbsp
+<input type = "checkbox" value = "bollywood" name = "interests[]">Bollywood</input>&nbsp
+<input type = "checkbox" value = "International" name = "interests[]">International</input>&nbsp
+<input type = "checkbox" value = "science" name = "interests[]">Science</input>&nbsp
+
+<br/><br/>
+&nbsp &nbsp &nbsp &nbsp
+<input type = "submit">
+</form>
+</body>
+<script language = "javascript">
+function submitForm(){
+	var alphaExp = /^[a-zA-Z]+$/;
+	var numExp = /^[0-9]+$/;
+	var eidExp = /\S+@\S+/;
+	var noError = true;
+	if(myform.fn.value == ""){
+		alert("First name cannot be left blank");
+		noError = false;
+	}else{
+		if(!myform.fn.value.match(alphaExp)){
+			alert("Invalid First Name");
+			noError = false;
+		}
+	}
+	if(myform.ln.value == ""){
+		alert("Last name cannot be left blank");
+		noError = false;
+	}else{
+		if(!myform.ln.value.match(alphaExp)){
+			alert("Invalid Last Name");
+			noError = false;
+		}
+	}
+	if(myform.cn.value == ""){
+		alert("Enter contact number");
+		noError = false;
+	}else{
+		if(!myform.cn.value.match(numExp)){
+			alert("Invalid Contact Number");
+			noError = false;
+		}
+	}
+	if(myform.eid.value == ""){
+		alert("Enter email id");
+		noError = false;
+	}else{
+		if(!myform.eid.value.match(eidExp)){
+			alert("Invalid email id");
+			noError = false;
+		}
+	}
+	var chks = document.getElementsByName('interests[]');
+	var k = 0;
+	for(var i=0;i<chks.length;i++){
+		if(chks[i].checked)
+			k++;
+	}
+	if(k<1){
+		alert("Select at least 1 interest");
+		noError = false;
+	}
+	if(noError){
+		alert("Subscribed to abc newspaper");
+		return true;
+	}else{
+		return false;
+	}
+}
+</script>
+</html>

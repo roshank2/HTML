@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Form</title>
+<script language = "javascript">
+function submitForm(){
+	if(form1.tfn.value == ""){
+		alert("First name cannot be left blank");
+	}else if(form1.tln.value == ""){
+		alert("Last name cannot be left blank");
+	}
+	else if(form1.dd1.value == ""){
+		alert("Please select your subject");
+	}
+	else if(form1.dd2.value == ""){
+		alert("Please select your course");
+	}
+	else{
+		alert("Form submitted successfully");
+	}
+}
+</script>
+</head>
+<h1>Student Feedback form</h1>
+<form name = "form1" onsubmit = "submitForm()">
+Teacher's First Name <input type ="textbox" name = "tfn"><br/><br/>
+Teacher's Last Name <input type ="textbox" name = "tln"><br/><br/>
+
+Subject <select name = "dd1">
+<option value = "">Select</option>
+<option value = "mcsl016">MCSL016</option>
+<option value = "bcsl043">BCSL043</option>
+<option value = "bcsl044">BCSL044</option>
+</select><br/><br/>
+
+Course <select name = "dd2">
+<option>Select</option>
+<option value = "bca">BCA</option>
+<option value = "mca">MCA</option>
+</select><br/><br/>
+
+
+Why did you choose the course<br/><br/>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+&nbsp &nbsp &nbsp &nbsp &nbsp
+Degree Required &nbsp <input type = "radio" value = "degreerequired" name = "dp" checked><br><br>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+&nbsp &nbsp &nbsp &nbsp &nbsp
+Personal Interest <input type = "radio" value = "personalintereset" name = "dp"><br><br>
+
+Level of the knowledge at the end  of the course<br/><br/>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+&nbsp &nbsp &nbsp &nbsp &nbsp
+Very good <input type = "radio" value = "vgood" name = "vggs" checked><br/><br/>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+&nbsp &nbsp &nbsp &nbsp &nbsp
+Good <input type = "radio" value = "good" name = "vggs"><br/><br/>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp
+Satisfactory <input type = "radio" value = "satisfactory" name = "vggs"><br/><br/>
+&nbsp &nbsp &nbsp &nbsp &nbsp
+<input type = "submit" value = "Submit">
+&nbsp &nbsp &nbsp &nbsp &nbsp
+<input type = "reset" value = "Reset">
+
+</form>
+</html>

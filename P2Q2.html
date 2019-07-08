@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<TITLE>Scrolling Text</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+var scroll=true;
+var scrollingText=" This is a Scrolling Text...";
+function scrollit(){
+if(scroll){
+document.scrolling.textbox.value=scrollingText;
+scrollingText=scrollingText.substring(1)+scrollingText.substring(0,1);
+}
+setTimeout('scrollit()',120);
+}
+</SCRIPT>
+</HEAD>
+<BODY onLoad="scrollit()">
+<FORM NAME="scrolling">
+<INPUT TYPE="text" NAME="textbox" SIZE="20" VALUE="" align = middle>
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,24 @@
+<html>
+
+<head>
+<title>Ques 2</title>
+</head>
+
+<body>
+<form name = "myform">
+<select name = "jump" onChange = "show(value)">
+<option value = "www.google.com">Google</option>
+<option value = "www.amazon.com">Amazon</option>
+</select>
+</form>
+</body>
+
+<script language = "javascript">
+function show(x){
+	if(myform.jump.value != ""){
+		document.location.href = x;
+	}
+}
+</script>
+
+</html>
